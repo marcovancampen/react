@@ -1,45 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-
-function Todo({ todo, index, completeTodo, removeTodo }) {
-  return (
-    <div
-      className="todo"
-      style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
-    >
-      {todo.text}
-      <div>
-        <button onClick={() => completeTodo(index)}>Complete</button>
-        <button onClick={() => removeTodo(index)}>x</button>
-      </div>
-    </div>
-  );
-}
-
-function TodoForm({ addTodo }) {
-  const [value, setValue] = React.useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!value) return;
-    addTodo(value);
-    setValue("");
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        className="input"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-      />
-    </form>
-  );
-}
+import Todo from "./components/todo/Todo.jsx";
+import TodoForm from "./components/todoform/TodoForm.jsx";
 
 function App() {
-  const [todos, setTodos] = React.useState([
+  let voornaam = "john  doe";
+  const voornaamAanpassen = (nieuwVoornaam) => {
+    voornaam = nieuwVoornaam;
+  };
+  const [todos, setTodos] = useState([
     {
       text: "Learn about React",
       isCompleted: false,
@@ -73,6 +42,9 @@ function App() {
 
   return (
     <div className="app">
+      <div>
+        <hallo voornaam={voornaam} voornaamAanpassen={voornaamAanpassen} />
+      </div>
       <div className="todo-list">
         {todos.map((todo, index) => (
           <Todo
