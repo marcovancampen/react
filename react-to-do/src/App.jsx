@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Todo from "./components/todo/Todo.jsx";
 import TodoForm from "./components/todoform/TodoForm.jsx";
+import Heading from "./components/headin/heading";
 
 function App() {
   let voornaam = "john  doe";
@@ -56,6 +57,7 @@ function App() {
           />
         ))}
         <TodoForm addTodo={addTodo} />
+        <Heading />
       </div>
     </div>
   );
