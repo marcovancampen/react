@@ -57,7 +57,7 @@ function App() {
           />
         ))}
         <TodoForm addTodo={addTodo} />
-        <Heading />
+        <Heading content={1} />
       </div>
     </div>
   );
