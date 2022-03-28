@@ -8,8 +8,12 @@ const Todo = ({ todo, index, completeTodo, removeTodo }) => {
     >
       {todo.text}
       <div>
-        <button onClick={() => completeTodo(index)}>Complete</button>
-        <button onClick={() => removeTodo(index)}>x</button>
+        <button className="button" onClick={() => completeTodo(index)}>
+          Complete
+        </button>
+        <button className="close" onClick={() => removeTodo(index)}>
+          x
+        </button>
       </div>
     </div>
   );
