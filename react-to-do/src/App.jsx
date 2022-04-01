@@ -5,9 +5,9 @@ import TodoForm from "./components/todoform/TodoForm.jsx";
 import Heading from "./components/headin/heading";
 
 function App() {
-  let voornaam = "john  doe";
-  const voornaamAanpassen = (nieuwVoornaam) => {
-    voornaam = nieuwVoornaam;
+  const addTodo = (text) => {
+    const newTodos = [...todos, { text }];
+    setTodos(newTodos);
   };
   const [todos, setTodos] = useState([
     {
@@ -24,14 +24,9 @@ function App() {
     },
   ]);
 
-  const addTodo = (text) => {
-    const newTodos = [...todos, { text }];
-    setTodos(newTodos);
-  };
-
   const completeTodo = (index) => {
     const newTodos = [...todos];
-    newTodos[index].isCompleted = true;
+    newTodos[index].isCompleted = !Todo.isCompleted;
     setTodos(newTodos);
   };
 
@@ -43,9 +38,9 @@ function App() {
 
   return (
     <div className="app">
-      <div>
-        <hallo voornaam={voornaam} voornaamAanpassen={voornaamAanpassen} />
-      </div>
+      <div></div>
+
+      <TodoForm addTodo={addTodo} />
       <div className="todo-list">
         {todos.map((todo, index) => (
           <Todo
@@ -56,7 +51,6 @@ function App() {
             removeTodo={removeTodo}
           />
         ))}
-        <TodoForm addTodo={addTodo} />
       </div>
     </div>
   );
