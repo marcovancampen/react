@@ -1,0 +1,19 @@
+.button {
+  border: none;
+  padding: 5px 10px;
+  font-size: 15px;
+  background-color: #58d442;
+  color: white;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-family: "Poppins";
+}
+.close {
+  border: none;
+  padding: 5px 10px;
+  font-size: 20px;
+  background-color: #e81c1c;
+  color: white;
+  border-radius: 5px;
+  font-family: "Poppins";
+}
